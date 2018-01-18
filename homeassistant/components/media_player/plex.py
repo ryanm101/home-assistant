@@ -391,7 +391,8 @@ class PlexClient(MediaPlayerDevice):
                     self._device.machineIdentifier, None)
 
         if self._session:
-            if self._device.machineIdentifier is not None and \
+            if self._device is not None and \
+                    self._device.machineIdentifier is not None and \
                     self._session.players:
                 self._is_player_available = True
                 self._player = [p for p in self._session.players
